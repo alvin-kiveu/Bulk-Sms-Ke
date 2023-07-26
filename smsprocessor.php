@@ -6,8 +6,8 @@ if (isset($_POST['send'])) {
   $Url = "https://api.umeskiasoftwares.com/api/v1/sms";
   $ch = curl_init($Url);
   $data = array(
-    'api_key' => 'SVQ4WVpPQUQ6NnpicDJsMm8=', //Replace with your api key here
-    'email' => 'alvo967@gmail.com', //Replace with your email
+    'api_key' => '', //Replace with your api key here
+    'email' => '', //Replace with your email
     'Sender_Id' => '23107', //If you have a custom sender id, use it here OR Use the default sender id: 23107
     'message' => $message,
     'phone' => $phone, //Phone number should be in the format: 0768XXXXX60 OR 254768XXXXX60 OR 254168XXXXX60
