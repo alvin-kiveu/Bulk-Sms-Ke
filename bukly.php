@@ -1,15 +1,13 @@
 <?php
-$phonenumbers = ['0768168060', '0113015674'];
+$phonenumbers = ['0768XXXX060', '011XXXXX74'];
 $num = 0;
-
-
 function sendSms($phone, $message)
 {
     $Url = "https://api.umeskiasoftwares.com/api/v1/sms";
     $ch = curl_init($Url);
     $data = array(
-        'api_key' => 'SVQ4WVpPQUQ6NnpicDJsMm8=', // Corrected: Encode the API key
-        'email' => 'alvo967@gmail.com',
+        'api_key' => '', // Corrected: Encode the API key
+        'email' => '',
         'Sender_Id' => '23107',
         'message' => $message,
         'phone' => $phone,
@@ -37,13 +35,11 @@ function sendSms($phone, $message)
         }
     }
 }
-
 while ($num < count($phonenumbers)) {
    $phone = $phonenumbers[$num]; // Corrected: Access individual phone number
    $message = "This is a Bulk SMS $num";
     sendSms($phone, $message); // Corrected: Pass individual phone number to the function
     $num++;
 }
-
 echo "Sms sent successfully";
 ?>
